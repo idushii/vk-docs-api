@@ -12,11 +12,6 @@
     },
     computed: {},
     mounted() {
-      window.router = this.$router
-      /*VK.Auth.login(function(e) {
-        window.router.push({path: './'})
-      }, 1)//*/
-      VK.Widgets.Auth("vk_auth", {"authUrl":"/Login"});
     },
     methods: {}
   }
