@@ -5,7 +5,7 @@
         <a slot="beforeDocs" class="list-group-item">
           <h5 class="text-center">Последние документы</h5>
         </a>
-        <router-link slot="afterDocs" class="list-group-item list-group-item-action" :to="{path: './DocsList'}">
+        <router-link slot="afterDocs" class="list-group-item list-group-item-action" :to="{name: 'DocsPage'}">
           <h5 class="text-center">Все документы</h5>
         </router-link>
       </docs>
@@ -19,7 +19,6 @@ export default {
   name: "app",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
     };
   },
   computed: {},

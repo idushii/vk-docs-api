@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import App from './App.vue'
-import DocsList from './DocsList.vue'
+import DocsPage from './DocsPage.vue'
 
 export default new VueRouter({
   routes: [
@@ -12,8 +12,9 @@ export default new VueRouter({
       component: App
     },
     {
-      path: '/DocsList',
-      component: DocsList
+      path: '/DocsPage',
+      name: 'DocsPage',
+      component: DocsPage
     },
   ]
 })

@@ -3,15 +3,22 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import router from './router'
-import Docs from './Docs.vue'; Vue.component('docs', Docs);
-import Auth from './Auth.vue'; Vue.component('Auth', Auth);
+import Auth from './Auth.vue';
+Vue.component('Auth', Auth);
+
+
+import docs_mixin from './docs-mixin'
+import Docs from './Docs.vue'; 
+Vue.component('docs', {...Docs, mixins: [docs_mixin]});
 
 var app = new Vue({
   el: '#app',
   template: '<div class="container my-2"><div class="row"><Auth /><router-view></router-view></div></div>',
   router,
   data: {
-    auth: { status: '' }
+    auth: {
+      status: ''
+    }
   },
   computed: {
     isLogin() {
@@ -22,6 +29,8 @@ var app = new Vue({
 
 window.router = app.$router
 window.DataApp = app.$data;
-VK.init({ apiId: 6047893 });
+VK.init({
+  apiId: 6047893
+});
 
 moment.locale("ru");
