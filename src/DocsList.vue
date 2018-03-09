@@ -1,5 +1,9 @@
 <template>
-  <div>DocsList</div>
+  <div class="card col">
+    <div class="card-body">
+      <h5 class="card-title">Документы</h5>
+    </div>
+  </div>
 </template>
 
 <script>

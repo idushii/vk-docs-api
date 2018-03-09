@@ -4,10 +4,11 @@ Vue.use(VueRouter)
 
 import router from './router'
 import Docs from './Docs.vue'; Vue.component('docs', Docs);
+import Auth from './Auth.vue'; Vue.component('Auth', Auth);
 
 var app = new Vue({
   el: '#app',
-  template: '<router-view></router-view>',
+  template: '<div class="container my-2"><div class="row"><Auth /><router-view></router-view></div></div>',
   router,
   data: {
     auth: { status: '' }
