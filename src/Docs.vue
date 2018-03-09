@@ -1,5 +1,5 @@
 <template>
-  <div id="docs" class="card">
+  <div id="docs" class="card" v-show="$root.auth.status == 'connected'">
     <div class="list-group list-group-flush">
       <a 
         v-for="doc in last" :key="`doc-${doc.id}`"
