@@ -1,17 +1,20 @@
 <template>
-  <div id="docs" class="card" v-show="$root.auth.status == 'connected'">
+  <div id="docs" v-show="$root.auth.status == 'connected'">
     <div class="list-group list-group-flush">
-      <a 
-        v-for="doc in last" :key="`doc-${doc.id}`"
-        :href="doc.url" 
-        class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">{{doc.title}}</h5>
-          <small>{{doc.date | date}}</small>
-        </div>
-        <small>Файл {{doc.ext}}</small>
-        <small class="float-right">размер {{doc.size | size}}</small>
-      </a>
+      <slot name="beforeDocs"></slot>
+      <slot v-for="doc in last" :doc="doc">
+        <a :key="`doc-${doc.id}`"
+          :href="doc.url" 
+          class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{doc.title}}</h5>
+            <small>{{doc.date | date}}</small>
+          </div>
+          <small>Файл {{doc.ext}}</small>
+          <small class="float-right">размер {{doc.size | size}}</small>
+        </a>
+      </slot>
+      <slot name="afterDocs"></slot>
     </div>
   </div>
 </template>
@@ -27,7 +30,7 @@ export default {
   },
   computed: {
     last() {
-      return this.docs.slice(0, 10);
+      return this.docs.slice(0, 5);
     }
   },
   created() {

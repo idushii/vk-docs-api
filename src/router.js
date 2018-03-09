@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import App from './App.vue'
-import Login from './Login.vue'
+import DocsList from './DocsList.vue'
 
 export default new VueRouter({
   routes: [
@@ -12,8 +12,8 @@ export default new VueRouter({
       component: App
     },
     {
-      path: '/Login',
-      component: Login
+      path: '/DocsList',
+      component: DocsList
     },
   ]
 })

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import router from './router'
+import Docs from './Docs.vue'; Vue.component('docs', Docs);
 
 var app = new Vue({
   el: '#app',
@@ -10,6 +11,11 @@ var app = new Vue({
   router,
   data: {
     auth: { status: '' }
+  },
+  computed: {
+    isLogin() {
+      return this.auth.status == "connected" ? true : false
+    }
   }
 })
 
