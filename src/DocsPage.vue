@@ -6,16 +6,16 @@
       </div>
         <div class="row m-0">
           <div class="col-7 caption-table" :class="{'sort-title': sortField == 'title'}" @click="sort('title')"><b>Название</b></div>
-          <div class="col caption-table" :class="{'sort-title': sortField == 'date'}" @click="sort('date')"><b>Дата</b></div>
-          <div class="col caption-table" :class="{'sort-title': sortField == 'size'}" @click="sort('size')"><b>Размер</b></div>
+          <div class="col caption-table d-none d-md-block" :class="{'sort-title': sortField == 'date'}" @click="sort('date')"><b>Дата</b></div>
+          <div class="col caption-table  d-none d-md-block" :class="{'sort-title': sortField == 'size'}" @click="sort('size')"><b>Размер</b></div>
           <div class="col caption-table"><b></b></div>
           <template  v-for="doc in docs">
             <div class="col-7 border-bottom border-top p-2 pl-4" :key="`doc1-${doc.id}`"><a :href="doc.url">
               {{doc.title}} {{doc.tags}}
             </a></div>
-            <div class="col border-bottom border-top p-2 text-truncate" :key="`doc2-${doc.id}`">{{doc.date | date}}</div>
-            <div class="col border-bottom border-top p-2 text-center" :key="`doc3-${doc.id}`">{{doc.size | size}}</div>
-            <div class="col border-bottom border-top p-2 text-center" :key="`doc4-${doc.id}`">
+            <div class="col border-bottom border-top p-2 text-truncate  d-none d-md-block" :key="`doc2-${doc.id}`">{{doc.date | date}}</div>
+            <div class="col border-bottom border-top p-2 text-center  d-none d-md-block" :key="`doc3-${doc.id}`">{{doc.size | size}}</div>
+            <div class="col border-bottom border-top p-2 text-right" :key="`doc4-${doc.id}`">
               <button class="mb-1 mb-md-0">✐</button>
               <button>✖</button>
             </div>
