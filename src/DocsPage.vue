@@ -10,7 +10,9 @@
           <div class="col caption-table" :class="{'sort-title': sortField == 'size'}" @click="sort('size')"><b>Размер</b></div>
           <div class="col caption-table"><b></b></div>
           <template  v-for="doc in docs">
-            <div class="col-7 border-bottom border-top p-2 pl-4" :key="`doc1-${doc.id}`"><a :href="doc.url">{{doc.title}}</a></div>
+            <div class="col-7 border-bottom border-top p-2 pl-4" :key="`doc1-${doc.id}`"><a :href="doc.url">
+              {{doc.title}} {{doc.tags}}
+            </a></div>
             <div class="col border-bottom border-top p-2 text-truncate" :key="`doc2-${doc.id}`">{{doc.date | date}}</div>
             <div class="col border-bottom border-top p-2 text-center" :key="`doc3-${doc.id}`">{{doc.size | size}}</div>
             <div class="col border-bottom border-top p-2 text-center" :key="`doc4-${doc.id}`">
