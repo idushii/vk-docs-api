@@ -31,4 +31,8 @@ export default {
 
 <style lang="scss">
 
+button {
+  cursor: pointer;
+}
+
 </style>
