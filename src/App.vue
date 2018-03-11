@@ -1,6 +1,9 @@
 <template>
   <div id="app" class="col-md-8 m-md-0 mt-2">
-    <div class="card" v-show="$root.isLogin">
+    <div class="card">
+      <notes_last></notes_last>
+    </div>
+    <div class="card" v-if="$root.isLogin">
       <docs>
         <a slot="beforeDocs" class="list-group-item">
           <h5 class="text-center">Последние документы</h5>
@@ -14,7 +17,6 @@
 </template>
 
 <script>
-import notes from "./notes";
 export default {
   name: "app",
   data() {
@@ -24,7 +26,6 @@ export default {
   computed: {},
   methods: {},
   components: {
-    notes
   }
 };
 </script>

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 Vue.use(VueRouter)
 
 import router from './router'
@@ -10,6 +11,8 @@ Vue.component('Auth', Auth);
 import docs_mixin from './docs-mixin'
 import Docs from './Docs.vue'; 
 Vue.component('docs', {...Docs, mixins: [docs_mixin]});
+
+import NotesLast from './NotesLast.vue'; Vue.component('notes_last', NotesLast);
 
 var app = new Vue({
   el: '#app',
