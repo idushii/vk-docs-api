@@ -36,7 +36,13 @@ export default {
             return fetch(r.response.upload_url, {
               method: 'POST',
               body: formData,
-            })
+            })//*/
+
+            // отослать
+            /*var xhr = new XMLHttpRequest();
+            xhr.open("POST", r.response.upload_url, true);
+            xhr.send(formData);
+            //Access-Control-Allow-Origin//*/
           }).then(r => {
             console.log(r)
             //VK.Api.call( "docs.save", { v: 5.73 }, function(r) { resolve(r) });
