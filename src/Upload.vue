@@ -31,13 +31,11 @@ export default {
 
             formData.append(`file`, e.target.files[0]);
 
-            console.log(formData)
+            console.log(formData.getAll('files'))
             console.log({url: r.response.upload_url})
             return fetch(r.response.upload_url, {
               method: 'POST',
               body: formData,
-              mode: 'no-cors',
-              headers:{'Access-Control-Allow-Origin':'*'}
             })
           }).then(r => {
             console.log(r)
