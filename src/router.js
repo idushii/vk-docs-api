@@ -4,6 +4,7 @@ Vue.use(VueRouter)
 
 import App from './App.vue'
 import DocsPage from './DocsPage.vue'
+import Upload from './Upload.vue'
 
 export default new VueRouter({
   routes: [
@@ -15,6 +16,11 @@ export default new VueRouter({
       path: '/DocsPage',
       name: 'DocsPage',
       component: DocsPage
+    },
+    {
+      path: '/Upload',
+      name: 'Upload',
+      component: Upload
     },
   ]
 })
