@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: "Upload",
   data() {
@@ -33,7 +35,10 @@ export default {
 
             console.log(formData.getAll('files'))
             console.log({url: r.response.upload_url})
-            return fetch(r.response.upload_url, {
+
+            return axios.post(r.response.upload_url, formData)
+
+            /*return fetch(r.response.upload_url, {
               method: 'POST',
               body: formData,
             })//*/
